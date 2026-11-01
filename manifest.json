@@ -1,0 +1,53 @@
+{
+	"manifest_version": 3,
+	"name": "Eligens",
+	"version": "1.0",
+	"description": "Right-click to inspect DOM selector breadcrumbs, highlight matches, and copy selectors.",
+	"permissions": [
+		"contextMenus",
+		"activeTab",
+		"scripting",
+		"clipboardWrite",
+    "downloads"
+	],
+	"background": {
+		"service_worker": "src/background/BackgroundManager.js"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": [
+        "src/Utils/DomUtils.js",
+        "src/Utils/FileHandler.js",
+        "src/Utils/SlugManager.js",
+        "src/Utils/safeUtils.js",
+
+        "src/Toast/Toast.js",
+        "src/TogglePanel/TogglePanelController.js",
+
+				"src/Managers/PseudoclassManager.js",
+        "src/Managers/ComponentsManager.js",
+        "src/Managers/PanelStateManager.js",
+
+				"src/UI/ComponentsMenu/ComponentsMenu.js",
+        "src/UI/ComponentsMenu/PseudoclassMenuController.js",
+
+				"src/UI/ToastNotification.js",
+				"src/UI/SelectorChainBar.js",
+
+        "src/UI/StoragePanel/SelectorContainerBuilder.js",
+        "src/UI/StoragePanel/StoragePanelEvents.js",
+        "src/UI/StoragePanel/StoragePanel.js",
+
+				"src/Highlighter.js",
+				"src/SelectorBuilder.js",
+				"src/EligensInspector.js"
+			],
+			"css": [
+        "src/Toast/toast.css",
+        "css/styles.css",
+        "css/toast.css"
+      ]
+		}
+	]
+}

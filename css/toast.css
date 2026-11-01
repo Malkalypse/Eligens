@@ -1,0 +1,31 @@
+#eligens-toast {
+	position: fixed;
+	bottom: 48px; /* just above the bar */
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 999999999;
+	pointer-events: none;
+}
+
+.eligens-toast-message {
+	background: #222;
+	color: #eee;
+	padding: 8px 14px;
+	border-radius: 6px;
+	font-family: monospace;
+	font-size: 14px;
+	border: 1px solid #444;
+	opacity: 0;
+	transition: opacity 0.25s ease;
+}
+
+.eligens-toast-selector {
+	font-weight: bold;
+	color: #fff;
+	margin-right: 8px;
+}
+
+.eligens-toast-status {
+	color: #aaa;
+	font-style: italic;
+}
